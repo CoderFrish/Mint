@@ -24,10 +24,10 @@ index 50587cde5dcc9cb61ffd8e0a0998a77e2e5c8c3e..1c94c3defd71da5cbb0a23040dae95a2
  
 diff --git a/src/main/java/com/menthamc/mint/config/modules/optimizations/SIMDConfig.java b/src/main/java/com/menthamc/mint/config/modules/optimizations/SIMDConfig.java
 new file mode 100644
-index 0000000000000000000000000000000000000000..173fe66acf9f25b634a1773ed83649b4b5179018
+index 0000000000000000000000000000000000000000..dfd5a96b4e14c81d0817a7410b58b2fac62b09ff
 --- /dev/null
 +++ b/src/main/java/com/menthamc/mint/config/modules/optimizations/SIMDConfig.java
-@@ -0,0 +1,34 @@
+@@ -0,0 +1,38 @@
 +package com.menthamc.mint.config.modules.optimizations;
 +
 +import com.electronwill.nightconfig.core.file.CommentedFileConfig;
@@ -43,6 +43,10 @@ index 0000000000000000000000000000000000000000..173fe66acf9f25b634a1773ed83649b4
 +    public static boolean enabled = true;
 +
 +    public void loaded(CommentedFileConfig Config) {
++        if (!enabled) {
++            return;
++        }
++
 +        try {
 +            SIMDDetection.isEnabled = SIMDDetection.canEnable(LOGGER);
 +            SIMDDetection.versionLimited = SIMDDetection.getJavaVersion() < 17;
