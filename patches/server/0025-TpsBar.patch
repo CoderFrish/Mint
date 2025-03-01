@@ -209,12 +209,12 @@ index 0000000000000000000000000000000000000000..3474683620f6fd10a1913181f2074e86
 +        }
 +
 +        if (TpsBar.isPlayerVisible(player)) {
-+            player.sendMessage(Component.text("Disabled tps bar").color(TextColor.color(0, 255, 0)));
++            player.sendMessage(Component.text("Disabled Tpsbar").color(TextColor.color(0, 255, 0)));
 +            TpsBar.setVisibilityForPlayer(player, false);
 +            return true;
 +        }
 +
-+        player.sendMessage(Component.text("Enabled tps bar").color(TextColor.color(0, 255, 0)));
++        player.sendMessage(Component.text("Enabled Tpsbar").color(TextColor.color(0, 255, 0)));
 +        TpsBar.setVisibilityForPlayer(player, true);
 +
 +        return true;
@@ -256,7 +256,7 @@ index 0000000000000000000000000000000000000000..f5373dd34889c7c5649a4e1f9a748a52
 +
 +import java.util.List;
 +
-+@Configuration(name = "tpabar", type = ConfigCategory.misc)
++@Configuration(name = "tpsbar", type = ConfigCategory.misc)
 +public class TpsBarConfig {
 +    @ConfigField(comment = "enabled")
 +    public static boolean tpsbarEnabled = true;
